@@ -7,6 +7,7 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "@haxtheweb/simple-cta/simple-cta.js";
 import "@haxtheweb/simple-img/simple-img.js";
+import "@haxtheweb/scroll-button";
 
 /**
  * `portfolio-very-theme`
@@ -23,6 +24,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
+    this.logo = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.p-w4nlvFtTYR6Si0UrQMugHaBf%26pid%3DApi&f=1&ipt=896ba85b7235c52fa81858a963d982777d4a1ff21df9f4fa75b10dfbbfb58a26&ipo=images";
+
     this.bio = "";
     this.headshot = "";
     this.mission = "";
@@ -46,15 +49,18 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     });
   }
 
+
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
       title: { type: String },
+      logo: {type:String},
+
       bio: { type: String },
       headshot: { type: String },
       mission: { type: String },
-      activeSection: { type: String }
+ 
     };
   }
 
@@ -71,42 +77,38 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           --portfolio-primary: #14284B;
           --portfolio-accent: #7FB2F0;
           --portfolio-text: #ffffff;
-          font-family: var(--ddd-font-navigation);
-          background-color: var(--portfolio-primary);
-          color: var(--portfolio-text);
-          min-height: 100vh;
+          font-family: var(--ddd-font-navigation); */
+          /* background-color: var(--portfolio-primary); */
+          /* color: var(--portfolio-text); */
+           min-height: 100vh;
         }
 
-        div{
-          padding: 100px;
-          width: calc(100vw - 200px);
-          overflow-x: hidden;
-          height: 100vh;
-          background-color: orange;
-        }
-
-        .red{
+        .header{
+          /* padding:100px; */
+          /* margin:50px; */
+          height:200px;
           background-color: red;
         }
 
-        .green{
-          background-color: green;
-        }
+        img{
+        display: block;
+        height: auto;
+        width:auto;
+        /* margin-left: auto;
+        margin-right: auto;
+        max-width: 80%; */
+        /* height: auto; */
+      }
 
-        .brown{
-          background-color: brown;
-        }
+      .logo{
+        display:block;
+        padding: 40px 10px 10px 10px;
+        height: 30%;
+        width: auto;
+      }
 
-        .blue{
-          background-color: blue;
-        }
 
-        .purple{
-          background-color: purple;
-        }
-        
-
-        banner a {
+        /* banner a {
           border: 2px solid green;
           padding: 10px;
           display: inline-block;
@@ -127,6 +129,13 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           height: 100px;
           right: 0;
           z-index: 1;
+        } */
+
+        scroll-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000px;
         }
 
         /* .logo {
@@ -188,21 +197,30 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     ];
   }
 
-  _handleNavClick(section) {
-    this.activeSection = section;
-  }
+  // _handleNavClick(section) {
+  //   this.activeSection = section;
+  // }
 
   // Lit render the HTML
   render() {
     return html`
-      <banner>
+    <!-- <nav-bar></nav-bar> -->
+    <scroll-button></scroll-button>
+    <div class="header">
+      <img src=${this.logo} class="logo">
+    </div>
+    <div><nav-bar .titles="${this.sectionTitles}"></nav-bar></div>
+    <div class="wrapper">
+      <slot></slot>
+    </div>
+      <!-- <banner>
           <a href="/login.php" tabindex="-1" class="menu-item menu-login"><button>Login</button></a>
           <a href="#section-2" tabindex="-1" class="menu-item"><button data-target="section-2">About</button></a>
           <a href="#section-3" tabindex="-1" class="menu-item"><button data-target="section-3">Research</button></a>
           <a href="#section-4" tabindex="-1" class="menu-item"><button data-target="section-4">Presentations & Publications</button></a>
           <a href="#section-5" tabindex="-1" class="menu-item"><button data-target="section-5">Professional Development</button></a>
           <a href="#section-5" tabindex="-1" class="menu-item"><button data-target="section-6">Contact</button></a>
-      </banner>
+      </banner> -->
       <!-- <div class="header">
         <simple-img
           class="logo"
@@ -227,10 +245,10 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
 
       <main class="content">
-      <div class="red">
+      <!-- <div class="red">
         <h2>About</h2>
-      </div>
-      <div class="blue">
+      </div> -->
+      <!-- <div class="blue">
         <h2>Research</h2>
       </div>
       <a name="3"></a>
@@ -242,7 +260,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       </div>
       <div class="brown">
         <h2>Funsies</h2>
-      </div>
+      </div> -->
 
         <!-- ${this.activeSection === 'about' ? html`
           <section class="about-section">

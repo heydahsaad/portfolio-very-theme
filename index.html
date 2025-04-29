@@ -12,41 +12,190 @@
       margin: 0;
       padding: 0;
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
     portfolio-very-theme {
-      margin: var(--ddd-spacing-2);
+      /* margin: var(--ddd-spacing-2); */
       border: var(--ddd-border-md);
       border-radius: var(--ddd-radius-lg);
     }
     portfolio-very-theme:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
-    #example {
-      --portfolio-very-theme-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
+ 
+    .section-content {
+      padding: 5px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 10px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .section-header h1{
+      margin:5px;
+    }
+
+    .section-body {
+    }
+
+    #About .section-body{
+      display: grid;
+      grid-template-columns: 300px 1fr; /* Text takes 1fr, image fixed at 400px */
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .text-content {
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .media-content img {
+      width:auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .experience-item {
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
   </style>
-  <title>portfolio-very-theme</title>
 </head>
 
 <body>
-  <div id="demo">
-    <h1>portfolio-very-theme</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
+  <div>
     <portfolio-very-theme>
+      <page-section id="About" title="About" color="beaver80">
+        <div class="section-content">
+          <div class="section-header">
+            <h1>Background</h1>
+          </div>
+          <div class="section-body">
+            <div class="media-content">
+              <img style="height: 300px; width: auto; " src="https://media.licdn.com/dms/image/v2/D4E03AQFhspQp9ZGeTQ/profile-displayphoto-shrink_400_400/B4EZXDwh5yG0Ag-/0/1742746034615?e=1751500800&v=beta&t=4mbmZP99Yja2p1Zvxuf0W9_tVflmER36b1zS7RVQ7Sw" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <p>Hi! My name is Haidah Saad, I am a sophomore studying Cybersecurity at The Pennsylvania State University. 
+                I got the opportunity to study here after I did well on my standardized highschool exam. 
+                Which evetually got me a scholarship that sponsored me to study here!</p>
+            </div>
+          </div>
+        </div>
+      </page-section>
 
+      <page-section id="Career" title="Career" color="beaver80">
+        <div class="section-content">
+            <div class="section-header">
+              <h1>Cybersecurity Milestones</h1>
+            </div>
+          <div class="timeline">
+            <div class="timeline-content">
+              <h4>2024</h4>
+                <h3>Penn State University</h3>
+                <p>Internship</p>
+                <ul>
+                  <li>Obtained certificate for SOC-900</li>
+                  <li>Recieved Internship offer from Cybersecurity Malaysia for summer</li>
+                </ul>
+
+                <h4>2023</h4>
+                <h3>Penn State University</h3>
+                <p>Started Bachelor's Degree in Cybersecurity</p>
+                <ul>
+                  <li>Recieved The Walker Award for achieving 4.00 GPA</li>
+                  <li>Dean's List for all 3 semester so far</li>
+                  <li>(Used to) Member of Competitive Cybersecurity Club</li>
+                </ul>
+
+                <h4>2022</h4>
+                <h3>High School Achievement</h3>
+                <p>Excelled in Standardized Exams</p>
+                <ul>
+                  <li>Secured Scholarship for University Studies</li>
+                  <li>Participated in Tech Competitions</li>
+                </ul>  
+            </div>
+          </div>
+        </div>
+      </page-section>
+
+      <page-section id="Skills" title="Skills" color="beaver80">
+        <div class="section-content">
+          <div class="section-header">
+            <h1>Skills & Expertise</h1>
+          </div>
+          <div class="section-body">
+            <div class="skills-grid">
+              <!-- Add your skills here -->
+              <div class="skill-item">Linux</div>
+              <div class="skill-item">PowerShell</div>
+              <div class="skill-item">Web Development</div>
+            </div>
+          </div>
+        </div>
+      </page-section>
+
+      <page-section id="Work" title="Work Experience" color="beaver80">
+        <div class="section-content">
+          <div class="section-header">
+            <h1>Work Experience</h1>
+          </div>
+          <div class="section-body">
+            <div class="experience-item">
+              <h3>Job Title</h3>
+              <p>Company Name</p>
+              <p>Duration</p>
+              <ul>
+                <li>Achievement 1</li>
+                <li>Achievement 2</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </page-section>
+
+      <page-section id="Contact" title="Contact" color="beaver80">
+        <div class="section-content">
+          <div class="section-header">
+            <h1>Contact Me</h1>
+          </div>
+          <div class="section-body">
+            <div class="contact-info">
+              <div class="contact-item">
+                <h3>Email</h3>
+                <p>your.email@example.com</p>
+              </div>
+              <div class="contact-item">
+                <h3>LinkedIn</h3>
+                <p><a href="#">Your LinkedIn Profile</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </page-section>
     </portfolio-very-theme>
+  </div>
     
     <!-- <h2>Slot usage</h2>
     <portfolio-very-theme data-accent="2" data-primary="17"><div>Sample slot content</div></portfolio-very-theme>
     <h2>Property usage</h2>
     <portfolio-very-theme id="example" title="Sample property title"></portfolio-very-theme> -->
-  </div>
-  <script type="module" src="./portfolio-very-theme.js"></script>
 
+  <script type="module" src="./portfolio-very-theme.js"></script>
+  <script type="module" src="./navbar.js"></script>
+  <script type="module" src="./page-section.js"></script>
   <!-- Take HAX, the Web and you further down the rabbit hole -->
   <style>
     
