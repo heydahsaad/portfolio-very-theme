@@ -22,7 +22,7 @@ export class PageSection extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
-    this.color = "";
+
   }
 
   // Lit reactive properties
@@ -30,7 +30,6 @@ export class PageSection extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
-      color: {type: String},
     };
   }
 
@@ -49,20 +48,26 @@ export class PageSection extends DDDSuper(I18NMixin(LitElement)) {
           --portfolio-text: #ffffff;
           font-family: var(--ddd-font-navigation);
           background-color: var(--portfolio-primary);
-          color: var(--portfolio-text);
+          display:flex;
+          flex-wrap: wrap;
         }
 
         .wrapper{
           padding: 20px;
-          /* width: calc(100vw - 200px); */
+          width: 100vw;
+          min-height: 1000px;
+          min-width: 790px;
+          background: var(--ddd-theme-primary);
+          color: var(--portfolio-text);
+          box-sizing: border-box;
           /* overflow-x: hidden; */
-          height: 100vh;
-          color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-white));
         }
 
         .title{
           padding:5px;
           margin:10px;
+          color: var(--portfolio-text);
+          text-align: center;
         }
       `
     ];

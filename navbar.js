@@ -26,12 +26,8 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
     this.t = this.t || {};
     this.t = {
       ...this.t,
-      title: "Portfolio",
-      about: "About",
-      research: "Research",
-      presentations: "Presentations & Publications",
-      development: "Professional Development",
-      contact: "Contact"
+      title: "",
+
     };
     this.registerLocalization({
       context: this,
@@ -69,32 +65,54 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         }
 
         .banner{
-            //make the buttons center nanti
             display:flex;
-            background-color:black;
-            justify-content:center;
-            align-items:center;
+            padding:10px;
+            background-color: rgb(0,0,0,0.50);
             position:fixed;
             left: 0;
             height: 100px;
             right: 0;
-            z-index: 1;
+            z-index: 1000;
             top:150px;
+            /* text-align:center; */
+            align-items:center;
+            justify-content: center;
         }
+
+        simple-cta{
+            background-color: white;
+            display:flex;
+            flex-wrap: wrap;
+            margin: 0 25px;
+        }
+
       `
     ];
   }
 
+  firstUpdated() {
+    this.shadowRoot.querySelectorAll('button[data-target]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const targetId = button.getAttribute('data-target');
+        const section = document.querySelector(`#${targetId}`);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
 
   // Lit render the HTML
   render() {
     return html`
     <div class="banner">
+        <!-- <simple-cta><a href="#About">${this.title}</a></simple-cta> -->
         <simple-cta><a href="#About">About</a></simple-cta>
         <simple-cta><a href="#Career">Career</a></simple-cta>
         <simple-cta><a href="#Skills">Skills</a></simple-cta>
         <simple-cta><a href="#Work">Work Experience</a></simple-cta>
         <simple-cta><a href="#Contact">Contact</a></simple-cta>
+        <simple-cta><a href="#Funfact">Funfact</a></simple-cta>
     </div>
     `;
   }

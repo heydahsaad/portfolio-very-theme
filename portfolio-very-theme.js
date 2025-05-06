@@ -25,6 +25,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     super();
     this.title = "";
     this.logo = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.p-w4nlvFtTYR6Si0UrQMugHaBf%26pid%3DApi&f=1&ipt=896ba85b7235c52fa81858a963d982777d4a1ff21df9f4fa75b10dfbbfb58a26&ipo=images";
+    this.cta = false;
 
     this.bio = "";
     this.headshot = "";
@@ -56,6 +57,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       title: { type: String },
       logo: {type:String},
+      cta: {type:Boolean},
 
       bio: { type: String },
       headshot: { type: String },
@@ -77,17 +79,18 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           --portfolio-primary: #14284B;
           --portfolio-accent: #7FB2F0;
           --portfolio-text: #ffffff;
-          font-family: var(--ddd-font-navigation); */
+          font-family: var(--ddd-font-navigation); 
           /* background-color: var(--portfolio-primary); */
           /* color: var(--portfolio-text); */
-           min-height: 100vh;
+          min-height: 100vh;
         }
 
         .header{
           /* padding:100px; */
           /* margin:50px; */
           height:200px;
-          background-color: red;
+          min-width: 790px;
+          background-color: var(--ddd-theme-default-info);
         }
 
         img{
@@ -118,18 +121,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           text-decoration: none;
         }
 
-        banner {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #00000066;
-          position: fixed;
-          top: 100px;
-          left: 0;
-          height: 100px;
-          right: 0;
-          z-index: 1;
-        } */
+ */  
 
         scroll-button {
           position: fixed;
@@ -209,103 +201,14 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     <div class="header">
       <img src=${this.logo} class="logo">
     </div>
-    <div><nav-bar .titles="${this.sectionTitles}"></nav-bar></div>
+    <div><nav-bar></nav-bar></div>
     <div class="wrapper">
       <slot></slot>
     </div>
-      <!-- <banner>
-          <a href="/login.php" tabindex="-1" class="menu-item menu-login"><button>Login</button></a>
-          <a href="#section-2" tabindex="-1" class="menu-item"><button data-target="section-2">About</button></a>
-          <a href="#section-3" tabindex="-1" class="menu-item"><button data-target="section-3">Research</button></a>
-          <a href="#section-4" tabindex="-1" class="menu-item"><button data-target="section-4">Presentations & Publications</button></a>
-          <a href="#section-5" tabindex="-1" class="menu-item"><button data-target="section-5">Professional Development</button></a>
-          <a href="#section-5" tabindex="-1" class="menu-item"><button data-target="section-6">Contact</button></a>
-      </banner> -->
-      <!-- <div class="header">
-        <simple-img
-          class="logo"
-          src="assets/logo.svg"
-          alt="Portfolio Logo">
-        </simple-img>
-        <h1 class="site-title">${this.t.title}</h1>
-      </div> -->
-      
-      <!-- <nav class="nav">
-        <a class="nav-item ${this.activeSection === 'about' ? 'active' : ''}"
-           @click="${() => this._handleNavClick('about')}">${this.t.about}</a>
-        <a class="nav-item ${this.activeSection === 'research' ? 'active' : ''}"
-           @click="${() => this._handleNavClick('research')}">${this.t.research}</a>
-        <a class="nav-item ${this.activeSection === 'presentations' ? 'active' : ''}"
-           @click="${() => this._handleNavClick('presentations')}">${this.t.presentations}</a>
-        <a class="nav-item ${this.activeSection === 'development' ? 'active' : ''}"
-           @click="${() => this._handleNavClick('development')}">${this.t.development}</a>
-        <a class="nav-item ${this.activeSection === 'contact' ? 'active' : ''}"
-           @click="${() => this._handleNavClick('contact')}">${this.t.contact}</a>
-      </nav> -->
+     
 
 
-      <main class="content">
-      <!-- <div class="red">
-        <h2>About</h2>
-      </div> -->
-      <!-- <div class="blue">
-        <h2>Research</h2>
-      </div>
-      <a name="3"></a>
-      <div class="green">
-        <h2>Presentations & Publications</h2>
-      </div>
-      <div class="purple">
-        <h2>Professional Development</h2>
-      </div>
-      <div class="brown">
-        <h2>Funsies</h2>
-      </div> -->
-
-        <!-- ${this.activeSection === 'about' ? html`
-          <section class="about-section">
-            <div>
-              <simple-img
-                class="headshot"
-                src="${this.headshot || 'assets/default-headshot.jpg'}"
-                alt="Professional headshot">
-              </simple-img>
-            </div>
-            <div>
-              <h2 class="section-title">${this.t.about}</h2>
-              <div class="bio">${this.bio || 'Add your professional bio here...'}</div>
-              <div class="mission">${this.mission || 'Add your mission statement or research interests here...'}</div>
-            </div>
-          </section>
-        ` : ''}
-        
-        ${this.activeSection === 'research' ? html`
-          <section>
-            <h2 class="section-title">${this.t.research}</h2>
-            <slot name="research"></slot>
-          </section>
-        ` : ''}
-        
-        ${this.activeSection === 'presentations' ? html`
-          <section>
-            <h2 class="section-title">${this.t.presentations}</h2>
-            <slot name="presentations"></slot>
-          </section>
-        ` : ''}
-        
-        ${this.activeSection === 'development' ? html`
-          <section>
-            <h2 class="section-title">${this.t.development}</h2>
-            <slot name="development"></slot>
-          </section>
-        ` : ''}
-        
-        ${this.activeSection === 'contact' ? html`
-          <section>
-            <h2 class="section-title">${this.t.contact}</h2>
-            <slot name="contact"></slot>
-          </section>
-        ` : ''} -->
+      <main class="content">   
       </main>
     `;
   }

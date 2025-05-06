@@ -21,6 +21,11 @@
       box-shadow: var(--ddd-boxShadow-sm);
     }
  
+    img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     .section-content {
       padding: 5px;
       max-width: 1200px;
@@ -37,7 +42,8 @@
       margin:5px;
     }
 
-    .section-body {
+    .section-header h4{
+      margin: 0px;
     }
 
     #About .section-body{
@@ -49,7 +55,7 @@
 
     .text-content {
       line-height: 1.6;
-      padding: 2rem;
+      padding: 10px;
     }
 
     .media-content img {
@@ -71,34 +77,97 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
+
+    /* Style for the cards */
+    .card-wrapper{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .card{
+      padding: 20px;
+      background-color: var(--ddd-theme-primary);
+      min-height: 20rem;
+      justify-items: center;
+    }
+
+    .card img{
+      max-width: 20rem;
+      height: auto;
+      padding: 10px;
+    }
+
+
   </style>
 </head>
 
 <body>
   <div>
     <portfolio-very-theme>
-      <page-section id="About" title="About" color="beaver80">
+      <div><nav-bar></nav-bar></div>
+
+      <!-- About section -->
+      <page-section id="About" title="About" data-primary="1">
         <div class="section-content">
           <div class="section-header">
-            <h1>Background</h1>
+            <h4>Background & Education</h4>
           </div>
+
+          <!-- About myself section -->
           <div class="section-body">
             <div class="media-content">
-              <img style="height: 300px; width: auto; " src="https://media.licdn.com/dms/image/v2/D4E03AQFhspQp9ZGeTQ/profile-displayphoto-shrink_400_400/B4EZXDwh5yG0Ag-/0/1742746034615?e=1751500800&v=beta&t=4mbmZP99Yja2p1Zvxuf0W9_tVflmER36b1zS7RVQ7Sw" alt="Profile image">
+              <img style="height: 250px; width: auto; " src="https://media.licdn.com/dms/image/v2/D4E03AQFhspQp9ZGeTQ/profile-displayphoto-shrink_400_400/B4EZXDwh5yG0Ag-/0/1742746034615?e=1751500800&v=beta&t=4mbmZP99Yja2p1Zvxuf0W9_tVflmER36b1zS7RVQ7Sw" alt="Profile image">
             </div>
             <div class="text-content">
               <p>Hi! My name is Haidah Saad, I am a sophomore studying Cybersecurity at The Pennsylvania State University. 
                 I got the opportunity to study here after I did well on my standardized highschool exam. 
                 Which evetually got me a scholarship that sponsored me to study here!</p>
             </div>
+            <!-- Education 1  -->
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 100px; width: auto;" src="https://i0.wp.com/images.onwardstate.com/uploads/2019/10/IMG_9180.jpg?w=960&ssl=1" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <h4 style="margin: 20px;">Education</h4>
+              <h5>The Pennsylvania State University</h5>
+              <p>Currently a sophomore studying Cybersecurity in the College of Information Science & Technology.
+                This bachelor of science program will help students on the hands on courses based around technical cyber defense strategies,
+                risk management, and data security. I have no idea why the tuition fee is so expensive, I don't see the point of
+                needing to pay that much of a money to get a degree.
+              </p>
+            </div>
+            <!-- Education 2 -->
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 100px; width: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Logo_MRSM.png" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <h4 style="margin: 20px;">Education</h4>
+              <h5>MRSM Tun Ghafar Baba, Melaka, Malaysia</h5>
+              <p>MRSM Tun Ghafar Baba, formerly known as MRSM Jasin, is a co-educational boarding school.
+                In english it is translated to "MARA Junior Science College" which means it's a specialized
+                science highschool. It is one of the top three Special Education Program to train the 
+                brightest students in the country.
+              </p>
+            </div>
+            <!-- Education 3 -->
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 80px; width: auto;" src="https://upload.wikimedia.org/wikipedia/ms/1/1b/Lencana_Institusi_Pendidikan_Hira.png" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <h5>Hira Secondary Islamic Highschool, Selangor, Malaysia</h5>
+              <p>Is an Islamic boarding highschool located in an urban developed part of Selangor.
+              </p>
+            </div>
           </div>
         </div>
       </page-section>
 
-      <page-section id="Career" title="Career" color="beaver80">
+      <!-- Career and skills section -->
+      <page-section id="Career" title="Career" data-primary="2">
         <div class="section-content">
             <div class="section-header">
-              <h1>Cybersecurity Milestones</h1>
+              <!-- <h1>Cybersecurity Milestones</h1> -->
             </div>
           <div class="timeline">
             <div class="timeline-content">
@@ -131,7 +200,7 @@
         </div>
       </page-section>
 
-      <page-section id="Skills" title="Skills" color="beaver80">
+      <page-section id="Skills" title="Skills" data-primary="3">
         <div class="section-content">
           <div class="section-header">
             <h1>Skills & Expertise</h1>
@@ -147,26 +216,26 @@
         </div>
       </page-section>
 
-      <page-section id="Work" title="Work Experience" color="beaver80">
+      <page-section id="Work" title="Work Experience" data-primary="4">
         <div class="section-content">
           <div class="section-header">
             <h1>Work Experience</h1>
           </div>
           <div class="section-body">
             <div class="experience-item">
-              <h3>Job Title</h3>
-              <p>Company Name</p>
-              <p>Duration</p>
+              <h3>College of IST Learning Assistant</h3>
+              <p>LA for IST210: Organization of Database</p>
+              <p>Fall 2024-Current</p>
               <ul>
-                <li>Achievement 1</li>
-                <li>Achievement 2</li>
+                <li>Help tutor students with the course</li>
+                <li>Grading their test and give proper feedback</li>
               </ul>
             </div>
           </div>
         </div>
       </page-section>
 
-      <page-section id="Contact" title="Contact" color="beaver80">
+      <page-section id="Contact" title="Contact" data-primary="5">
         <div class="section-content">
           <div class="section-header">
             <h1>Contact Me</h1>
@@ -175,13 +244,31 @@
             <div class="contact-info">
               <div class="contact-item">
                 <h3>Email</h3>
-                <p>your.email@example.com</p>
+                <p>hbb5305@psu.edu</p>
               </div>
               <div class="contact-item">
                 <h3>LinkedIn</h3>
-                <p><a href="#">Your LinkedIn Profile</a></p>
+                <p><a href="www.linkedin.com/in/haidahsaad">Connect me on LinkedIn!</a></p>
               </div>
             </div>
+          </div>
+        </div>
+      </page-section>
+
+      <!-- Funfact section -->
+      <page-section id="Funfact" title="Funfacts" data-primary="6">
+        <div class="card-wrapper">
+          <div class="card" data-primary="7">
+            <img src="https://www.parents.com/thmb/1GeuyDqJSV4bwDnpaNWcEdeMueI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/shows-similar-to-bluey-bluey_s3_dirt_003_17003128-7c2350f3a93b4fa898bd79d3445d757b.jpg">
+            <h5>I love Bluey!</h5>
+          </div>
+          <div class="card" data-primary="8">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-goMM8xltyeVEknmdl5Q2BaWoL8nKma7iQ&s">
+            <h5>I do Taekwondo!</h5>
+          </div>
+          <div class="card" data-primary="9">
+            <img src="https://i.imgflip.com/zvtm4.jpg?a484968">
+            <h5>I used to paint!</h5>
           </div>
         </div>
       </page-section>
@@ -196,42 +283,7 @@
   <script type="module" src="./portfolio-very-theme.js"></script>
   <script type="module" src="./navbar.js"></script>
   <script type="module" src="./page-section.js"></script>
+
   <!-- Take HAX, the Web and you further down the rabbit hole -->
-  <style>
-    
-    /* #follow-the-white-rabbit {
-      margin: var(--ddd-spacing-4) auto 64px  16px;
-      background-color: var(--ddd-accent-4);
-      color: black;
-    }
-    #follow-the-white-rabbit[open] summary {
-      background-color: var(--ddd-accent-4) !important;
-      color: black;
-    }
-    #follow-the-white-rabbit[open] .content {
-      padding: 0 var(--ddd-spacing-4);
-    }
-    #follow-the-white-rabbit ul,
-    #follow-the-white-rabbit li {
-      padding: 0;
-      margin: 0;
-    }
-    #follow-the-white-rabbit li {
-      font-size: var(--ddd-font-size-xs);
-      list-style: none;
-    }
-    #follow-the-white-rabbit li strong,
-    #follow-the-white-rabbit li a {
-      padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-      color: black;
-      display: block;
-      font-weight: bold;
-    }
-    #follow-the-white-rabbit li:focus-within a,
-    #follow-the-white-rabbit li:hover a {
-      background-color: black;
-      color: yellow;
-    } */
-  </style>
 </body>
 </html>
