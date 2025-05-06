@@ -22,10 +22,11 @@
     }
  
     img{
-      width: 100%;
+      width: 30%;
       height: auto;
-      display: block;
+      display: flex;
     }
+
     .section-content {
       padding: 5px;
       max-width: 1200px;
@@ -42,7 +43,7 @@
       margin:5px;
     }
 
-    .section-header h4{
+    h4{
       margin: 0px;
     }
 
@@ -51,6 +52,15 @@
       grid-template-columns: 300px 1fr; /* Text takes 1fr, image fixed at 400px */
       gap: 1rem;
       align-items: center;
+    }
+
+    #Career .section-body{
+      display: flex;
+      /* justify-content: center; */
+      padding:10px;
+      flex-direction: column;
+      align-items: center;
+      /* min-height: 900px; */
     }
 
     .text-content {
@@ -98,6 +108,24 @@
       padding: 10px;
     }
 
+    /* details stuff */
+    details summary {
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        box-shadow: 3px 3px 8px black;
+        border-radius: 25px;
+        margin: 15px;
+      } 
+
+    details div {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+        height: 70px;
+        overflow: auto;
+      }
 
   </style>
 </head>
@@ -107,7 +135,7 @@
     <portfolio-very-theme>
       <div><nav-bar></nav-bar></div>
 
-      <!-- About section -->
+      <!-- About background & education section -->
       <page-section id="About" title="About" data-primary="1">
         <div class="section-content">
           <div class="section-header">
@@ -125,51 +153,61 @@
                 Which evetually got me a scholarship that sponsored me to study here!</p>
             </div>
             <!-- Education 1  -->
-            <div class="media-content" style="justify-items: right;">
-              <img style="height: 100px; width: auto;" src="https://i0.wp.com/images.onwardstate.com/uploads/2019/10/IMG_9180.jpg?w=960&ssl=1" alt="Profile image">
-            </div>
-            <div class="text-content">
-              <h4 style="margin: 20px;">Education</h4>
-              <h5>The Pennsylvania State University</h5>
-              <p>Currently a sophomore studying Cybersecurity in the College of Information Science & Technology.
-                This bachelor of science program will help students on the hands on courses based around technical cyber defense strategies,
-                risk management, and data security. I have no idea why the tuition fee is so expensive, I don't see the point of
-                needing to pay that much of a money to get a degree.
-              </p>
-            </div>
+              <div class="media-content" style="justify-items: right;">
+                <img style="height: 100px; width: auto;" src="https://i0.wp.com/images.onwardstate.com/uploads/2019/10/IMG_9180.jpg?w=960&ssl=1" alt="Profile image">
+              </div>
+              <div class="text-content">
+                <h4 style="margin: 20px;">Education</h4>
+                <h5>The Pennsylvania State University</h5>
+                <p>Currently a sophomore studying Cybersecurity in the College of Information Science & Technology.
+                  This bachelor of science program will help students on the hands on courses based around technical cyber defense strategies,
+                  risk management, and data security. I have no idea why the tuition fee is so expensive, I don't see the point of
+                  needing to pay that much of a money to get a degree.
+                </p>
+              </div>
             <!-- Education 2 -->
-            <div class="media-content" style="justify-items: right;">
-              <img style="height: 100px; width: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Logo_MRSM.png" alt="Profile image">
-            </div>
-            <div class="text-content">
-              <h4 style="margin: 20px;">Education</h4>
-              <h5>MRSM Tun Ghafar Baba, Melaka, Malaysia</h5>
-              <p>MRSM Tun Ghafar Baba, formerly known as MRSM Jasin, is a co-educational boarding school.
-                In english it is translated to "MARA Junior Science College" which means it's a specialized
-                science highschool. It is one of the top three Special Education Program to train the 
-                brightest students in the country.
-              </p>
-            </div>
+              <div class="media-content" style="justify-items: right;">
+                <img style="height: 100px; width: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Logo_MRSM.png" alt="Profile image">
+              </div>
+              <div class="text-content">
+                <h4 style="margin: 20px;">Education</h4>
+                <h5>MRSM Tun Ghafar Baba, Melaka, Malaysia</h5>
+                <p>MRSM Tun Ghafar Baba, formerly known as MRSM Jasin, is a co-educational boarding school.
+                  In english it is translated to "MARA Junior Science College" which means it's a specialized
+                  science highschool. It is one of the top three Special Education Program to train the 
+                  brightest students in the country.
+                </p>
+              </div>
             <!-- Education 3 -->
-            <div class="media-content" style="justify-items: right;">
-              <img style="height: 80px; width: auto;" src="https://upload.wikimedia.org/wikipedia/ms/1/1b/Lencana_Institusi_Pendidikan_Hira.png" alt="Profile image">
-            </div>
-            <div class="text-content">
-              <h5>Hira Secondary Islamic Highschool, Selangor, Malaysia</h5>
-              <p>Is an Islamic boarding highschool located in an urban developed part of Selangor.
-              </p>
-            </div>
+              <!-- <div class="media-content" style="justify-items: right;">
+                <img style="height: 80px; width: auto;" src="https://upload.wikimedia.org/wikipedia/ms/1/1b/Lencana_Institusi_Pendidikan_Hira.png" alt="Profile image">
+              </div>
+              <div class="text-content">
+                <h5>Hira Secondary Islamic Highschool, Selangor, Malaysia</h5>
+                <p>Is an Islamic boarding highschool located in an urban developed part of Selangor.
+                </p>
+              </div> -->
           </div>
         </div>
       </page-section>
 
       <!-- Career and skills section -->
-      <page-section id="Career" title="Career" data-primary="2">
+      <page-section id="Career" title="Career" data-primary="10">
         <div class="section-content">
             <div class="section-header">
-              <!-- <h1>Cybersecurity Milestones</h1> -->
+              <h4>What I got myself into...</h4>
             </div>
-          <div class="timeline">
+            <div class="section-body">
+              <img src="https://right-hand.ai/wp-content/uploads/2023/07/Untitled-design-2.png.webp">
+              <h4>Cybersecurity</h4>
+              <details>
+                <summary>More info</summary>
+                <div>I dont really understand a thang</div>
+              </details>
+            </div>
+            <!-- What i gotten into #1 -->
+
+          <!-- <div class="timeline">
             <div class="timeline-content">
               <h4>2024</h4>
                 <h3>Penn State University</h3>
@@ -196,26 +234,27 @@
                   <li>Participated in Tech Competitions</li>
                 </ul>  
             </div>
-          </div>
+          </div> -->
+        
         </div>
       </page-section>
 
-      <page-section id="Skills" title="Skills" data-primary="3">
+      <!-- <page-section id="Skills" title="Skills" data-primary="3">
         <div class="section-content">
           <div class="section-header">
             <h1>Skills & Expertise</h1>
           </div>
           <div class="section-body">
             <div class="skills-grid">
-              <!-- Add your skills here -->
               <div class="skill-item">Linux</div>
               <div class="skill-item">PowerShell</div>
               <div class="skill-item">Web Development</div>
             </div>
           </div>
         </div>
-      </page-section>
+      </page-section> -->
 
+      <!-- Works done section -->
       <page-section id="Work" title="Work Experience" data-primary="4">
         <div class="section-content">
           <div class="section-header">
@@ -235,6 +274,7 @@
         </div>
       </page-section>
 
+      <!-- Contact section -->
       <page-section id="Contact" title="Contact" data-primary="5">
         <div class="section-content">
           <div class="section-header">
@@ -272,6 +312,7 @@
           </div>
         </div>
       </page-section>
+
     </portfolio-very-theme>
   </div>
     

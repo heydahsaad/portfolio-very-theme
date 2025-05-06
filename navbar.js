@@ -70,7 +70,7 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
             background-color: rgb(0,0,0,0.50);
             position:fixed;
             left: 0;
-            height: 100px;
+            height: 80px;
             right: 0;
             z-index: 1000;
             top:150px;
@@ -109,7 +109,7 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         <!-- <simple-cta><a href="#About">${this.title}</a></simple-cta> -->
         <simple-cta><a href="#About">About</a></simple-cta>
         <simple-cta><a href="#Career">Career</a></simple-cta>
-        <simple-cta><a href="#Skills">Skills</a></simple-cta>
+        <!-- <simple-cta><a href="#Skills">Skills</a></simple-cta> -->
         <simple-cta><a href="#Work">Work Experience</a></simple-cta>
         <simple-cta><a href="#Contact">Contact</a></simple-cta>
         <simple-cta><a href="#Funfact">Funfact</a></simple-cta>

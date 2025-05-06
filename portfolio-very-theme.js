@@ -24,7 +24,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
-    this.logo = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.p-w4nlvFtTYR6Si0UrQMugHaBf%26pid%3DApi&f=1&ipt=896ba85b7235c52fa81858a963d982777d4a1ff21df9f4fa75b10dfbbfb58a26&ipo=images";
+    this.logo = "https://dod-scholarship.ist.psu.edu/wp-content/uploads/sites/16/2022/04/PSU_IST_RGB_2C.png";
     this.cta = false;
 
     this.bio = "";
@@ -74,6 +74,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         :root{
           scroll-behavior:smooth;
         }
+
         :host {
           display: block;
           --portfolio-primary: #14284B;
@@ -88,9 +89,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         .header{
           /* padding:100px; */
           /* margin:50px; */
-          height:200px;
+          height:240px;
           min-width: 790px;
-          background-color: var(--ddd-theme-default-info);
+          background-color: var(--ddd-theme-default-slateLight);
+          display:flex;
+          justify-content:space-between;          
         }
 
         img{
@@ -129,62 +132,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           right: 20px;
           z-index: 1000px;
         }
-
-        /* .logo {
-          width: 60px;
-          height: 60px;
-          margin-right: var(--ddd-spacing-2);
-        }
-        .site-title {
-          font-size: var(--ddd-font-size-3xl);
-          margin: 0;
-          color: var(--portfolio-text);
-        }
-        .nav {
-          display: flex;
-          justify-content: center;
-          gap: var(--ddd-spacing-4);
-          padding: var(--ddd-spacing-2);
-          background-color: var(--portfolio-primary);
-        }
-        .nav-item {
-          color: var(--portfolio-text);
-          text-decoration: none;
-          padding: var(--ddd-spacing-2);
-          cursor: pointer;
-        }
-        .nav-item:hover,
-        .nav-item.active {
-          color: var(--portfolio-accent);
-        }
-        .content {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: var(--ddd-spacing-4);
-        }
-        .about-section {
-          display: grid;
-          grid-template-columns: 300px 1fr;
-          gap: var(--ddd-spacing-4);
-          align-items: start;
-        }
-        .headshot {
-          width: 100%;
-          border-radius: var(--ddd-radius-md);
-        }
-        .bio {
-          font-size: var(--ddd-font-size-m);
-          line-height: 1.6;
-        }
-        .mission {
-          margin-top: var(--ddd-spacing-4);
-          font-style: italic;
-        }
-        .section-title {
-          font-size: var(--ddd-font-size-2xl);
-          color: var(--portfolio-accent);
-          margin-bottom: var(--ddd-spacing-4);
-        } */
       `
     ];
   }
@@ -200,7 +147,9 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     <scroll-button></scroll-button>
     <div class="header">
       <img src=${this.logo} class="logo">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd1699c1-baaa-4632-8a2f-c609bcb3cb0e/dj7utrv-77890d2c-3323-46cc-a0ff-697bca24afb5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NkMTY5OWMxLWJhYWEtNDYzMi04YTJmLWM2MDliY2IzY2IwZVwvZGo3dXRydi03Nzg5MGQyYy0zMzIzLTQ2Y2MtYTBmZi02OTdiY2EyNGFmYjUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8eFTPsTs7tAO9lWWr78kZjyVWvwk4JD8tuh9TYCtCZc">
     </div>
+
     <div><nav-bar></nav-bar></div>
     <div class="wrapper">
       <slot></slot>
