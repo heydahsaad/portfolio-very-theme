@@ -54,8 +54,9 @@ export class PageSection extends DDDSuper(I18NMixin(LitElement)) {
 
         .wrapper{
           padding: 20px;
+          min-height: 100vh;
           width: 100vw;
-          min-height: 1050px;
+          /* min-height: 1050px; */
           min-width: 790px;
           background: var(--ddd-theme-primary);
           color: var(--portfolio-text);
