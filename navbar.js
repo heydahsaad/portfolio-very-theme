@@ -106,13 +106,11 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
     <div class="banner">
-        <!-- <simple-cta><a href="#About">${this.title}</a></simple-cta> -->
         <simple-cta><a href="#About">About</a></simple-cta>
         <simple-cta><a href="#Career">Career</a></simple-cta>
-        <!-- <simple-cta><a href="#Skills">Skills</a></simple-cta> -->
-        <simple-cta><a href="#Work">Work Experience</a></simple-cta>
-        <simple-cta><a href="#Contact">Contact</a></simple-cta>
+        <simple-cta><a href="#Work">Works</a></simple-cta>
         <simple-cta><a href="#Funfact">Funfact</a></simple-cta>
+        <simple-cta><a href="#Contact">Contact</a></simple-cta>
     </div>
     `;
   }

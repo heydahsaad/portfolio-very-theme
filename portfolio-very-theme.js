@@ -27,19 +27,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     this.logo = "https://dod-scholarship.ist.psu.edu/wp-content/uploads/sites/16/2022/04/PSU_IST_RGB_2C.png";
     this.cta = false;
 
-    this.bio = "";
-    this.headshot = "";
-    this.mission = "";
     this.activeSection = "about";
     this.t = this.t || {};
     this.t = {
       ...this.t,
-      title: "Portfolio",
-      about: "About",
-      research: "Research",
-      presentations: "Presentations & Publications",
-      development: "Professional Development",
-      contact: "Contact"
+      
     };
     this.registerLocalization({
       context: this,
@@ -58,11 +50,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       title: { type: String },
       logo: {type:String},
       cta: {type:Boolean},
-
-      bio: { type: String },
-      headshot: { type: String },
-      mission: { type: String },
- 
     };
   }
 
@@ -83,7 +70,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           font-family: var(--ddd-font-navigation); 
           /* background-color: var(--portfolio-primary); */
           /* color: var(--portfolio-text); */
-          min-height: 100vh;
+          /* min-height: 100vh; */
         }
 
         .header{
@@ -95,6 +82,13 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           display:flex;
           justify-content:space-between;          
         }
+
+        .wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex; 
+        flex-direction: column;
+      }
 
         img{
         display: block;
@@ -111,20 +105,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         padding: 40px 10px 10px 10px;
         height: 30%;
         width: auto;
-      }
-
-
-        /* banner a {
-          border: 2px solid green;
-          padding: 10px;
-          display: inline-block;
-          margin: 10px;
-          background-color: green;
-          color: white;
-          text-decoration: none;
-        }
-
- */  
+      } 
 
         scroll-button {
           position: fixed;
@@ -136,29 +117,20 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     ];
   }
 
-  // _handleNavClick(section) {
-  //   this.activeSection = section;
-  // }
-
   // Lit render the HTML
   render() {
     return html`
-    <!-- <nav-bar></nav-bar> -->
     <scroll-button></scroll-button>
+
     <div class="header">
       <img src=${this.logo} class="logo">
       <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd1699c1-baaa-4632-8a2f-c609bcb3cb0e/dj7utrv-77890d2c-3323-46cc-a0ff-697bca24afb5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NkMTY5OWMxLWJhYWEtNDYzMi04YTJmLWM2MDliY2IzY2IwZVwvZGo3dXRydi03Nzg5MGQyYy0zMzIzLTQ2Y2MtYTBmZi02OTdiY2EyNGFmYjUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8eFTPsTs7tAO9lWWr78kZjyVWvwk4JD8tuh9TYCtCZc">
     </div>
 
-    <div><nav-bar></nav-bar></div>
+    <nav-bar></nav-bar>
     <div class="wrapper">
       <slot></slot>
     </div>
-     
-
-
-      <main class="content">   
-      </main>
     `;
   }
 

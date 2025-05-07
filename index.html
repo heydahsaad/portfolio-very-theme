@@ -12,17 +12,9 @@
       margin: 0;
       padding: 0;
     }
-    portfolio-very-theme {
-      /* margin: var(--ddd-spacing-2); */
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
-    }
-    portfolio-very-theme:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
-    }
  
     img{
-      width: 30%;
+      width: 100%;
       height: auto;
       display: flex;
     }
@@ -43,8 +35,14 @@
       margin:5px;
     }
 
-    h4{
+    .section-header h4{
       margin: 0px;
+      padding: 5px;;
+    }
+
+    .section-body h4{
+      margin: 0px;
+      padding: 5px;
     }
 
     #About .section-body{
@@ -54,6 +52,15 @@
       align-items: center;
     }
 
+    #Contact .section-body,
+    #Work .section-body{
+      display: grid;
+      grid-template-columns: 250px 1fr; /* Text takes 1fr, image fixed at 400px */
+      gap: 1rem;
+      align-items: center;
+    }
+
+    
     #Career .section-body{
       display: flex;
       /* justify-content: center; */
@@ -70,23 +77,7 @@
 
     .media-content img {
       width:auto;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .experience-item {
-      margin-bottom: 2rem;
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
+    }    
 
     /* Style for the cards */
     .card-wrapper{
@@ -126,6 +117,10 @@
         height: 70px;
         overflow: auto;
       }
+
+    .section-body img{
+      height: 200px; width: auto;
+    }
 
   </style>
 </head>
@@ -170,7 +165,6 @@
                 <img style="height: 100px; width: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Logo_MRSM.png" alt="Profile image">
               </div>
               <div class="text-content">
-                <h4 style="margin: 20px;">Education</h4>
                 <h5>MRSM Tun Ghafar Baba, Melaka, Malaysia</h5>
                 <p>MRSM Tun Ghafar Baba, formerly known as MRSM Jasin, is a co-educational boarding school.
                   In english it is translated to "MARA Junior Science College" which means it's a specialized
@@ -198,14 +192,31 @@
               <h4>What I got myself into...</h4>
             </div>
             <div class="section-body">
-              <img src="https://right-hand.ai/wp-content/uploads/2023/07/Untitled-design-2.png.webp">
-              <h4>Cybersecurity</h4>
-              <details>
-                <summary>More info</summary>
-                <div>I dont really understand a thang</div>
-              </details>
+              <!-- What i gotten into #1 -->
+                <img style="margin: 8px 0 8px 0;" src="https://right-hand.ai/wp-content/uploads/2023/07/Untitled-design-2.png.webp">
+                <h4>Broad Domain of Cybersecurity</h4>
+                <details>
+                  <summary>More info</summary>
+                  <div>I dont really understand a thang</div>
+                </details>
+
+               <!-- What i gotten myself into #2 -->
+                <img style="margin: 40px 0 8px 0;" src="https://blogs.baruch.cuny.edu/fro14dwb/files/2014/11/other3.jpeg">
+                <h4>Pain in the butt tuition fee</h4>
+                <details>
+                  <summary>More info</summary>
+                  <div>Does anyone has a good idea on how to make it cheaper? Should the government print more money??</div>
+                </details>
+
+              <!-- What i gotten myself into #3 -->
+                <img style="margin: 40px 0 8px 0;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWY1UFVBFRLduLUXsRP2l5uM1VJpkzpobLWQ&s">
+                <h4>Bipolar Weather of State College</h4>
+                <details>
+                  <summary>More info</summary>
+                  <div>A thunderstorm that lasts for 10 minutes, disrupt every possible powerline then followed by a sunny sunshie 10 minutes after lol</div>
+                </details>
             </div>
-            <!-- What i gotten into #1 -->
+            
 
           <!-- <div class="timeline">
             <div class="timeline-content">
@@ -239,29 +250,46 @@
         </div>
       </page-section>
 
-      <!-- <page-section id="Skills" title="Skills" data-primary="3">
-        <div class="section-content">
-          <div class="section-header">
-            <h1>Skills & Expertise</h1>
-          </div>
-          <div class="section-body">
-            <div class="skills-grid">
-              <div class="skill-item">Linux</div>
-              <div class="skill-item">PowerShell</div>
-              <div class="skill-item">Web Development</div>
-            </div>
-          </div>
-        </div>
-      </page-section> -->
-
       <!-- Works done section -->
-      <page-section id="Work" title="Work Experience" data-primary="4">
+      <page-section id="Work" title="Works" data-primary="4">
         <div class="section-content">
           <div class="section-header">
-            <h1>Work Experience</h1>
+            <h4>The (un)professional side of me</h4>
           </div>
+
           <div class="section-body">
-            <div class="experience-item">
+
+            <!-- works 1 -->
+              <div class="media-content" style="justify-items: right;">
+                <img style="height: 200px; width: auto;" src="https://i.redd.it/lkqxljslzxu81.png" alt="Profile image">
+              </div>
+              <div class="text-content">
+                <h5>SOC-900 Certificate</h5>
+                <p>Whtever
+                </p>
+              </div>
+
+            <!-- works 2 -->
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 150px; width: auto;" src="https://media.makeameme.org/created/not-qualified-teachers.jpg" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <h5>IST210 Learning Assistant</h5>
+              <p>Whtever
+              </p>
+            </div>
+
+            <!-- works 2 -->
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 150px; width: auto;" src="https://vistacreate-web.s3.eu-west-1.amazonaws.com/blog/uploads/2022/07/6njoux.webp" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <h5>Social Media Manager</h5>
+              <p>Whtever 
+              </p>
+            </div>
+
+            <!-- <div class="experience-item">
               <h3>College of IST Learning Assistant</h3>
               <p>LA for IST210: Organization of Database</p>
               <p>Fall 2024-Current</p>
@@ -269,35 +297,17 @@
                 <li>Help tutor students with the course</li>
                 <li>Grading their test and give proper feedback</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </page-section>
-
-      <!-- Contact section -->
-      <page-section id="Contact" title="Contact" data-primary="5">
-        <div class="section-content">
-          <div class="section-header">
-            <h1>Contact Me</h1>
-          </div>
-          <div class="section-body">
-            <div class="contact-info">
-              <div class="contact-item">
-                <h3>Email</h3>
-                <p>hbb5305@psu.edu</p>
-              </div>
-              <div class="contact-item">
-                <h3>LinkedIn</h3>
-                <p><a href="www.linkedin.com/in/haidahsaad">Connect me on LinkedIn!</a></p>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </page-section>
 
       <!-- Funfact section -->
       <page-section id="Funfact" title="Funfacts" data-primary="6">
-        <div class="card-wrapper">
+        <div class="section-header">
+          <h4>In case you find it fun~</h4>
+        </div>
+        <div class="card-wrapper">          
           <div class="card" data-primary="7">
             <img src="https://www.parents.com/thmb/1GeuyDqJSV4bwDnpaNWcEdeMueI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/shows-similar-to-bluey-bluey_s3_dirt_003_17003128-7c2350f3a93b4fa898bd79d3445d757b.jpg">
             <h5>I love Bluey!</h5>
@@ -313,6 +323,27 @@
         </div>
       </page-section>
 
+      <!-- Contact section -->
+      <page-section id="Contact" title="Contact" data-primary="5">
+        <div class="section-content">
+          <div class="section-header">
+            <h4>Interested to hire me? Give me a ping</h4>
+          </div>
+
+          <div class="section-body">
+            <div class="media-content" style="justify-items: right;">
+              <img style="height: 200px; width: auto;" src="https://media.makeameme.org/created/contact-us-the-27e6f03b80.jpg" alt="Profile image">
+            </div>
+            <div class="text-content">
+              <!-- <h5>SOC-900 Certificate</h5> -->
+              <ul><li>Email: <a href="hbb5305@psu.edu">hbb5305@psu.edu</a></li></ul>
+              <ul><li>Phone Number: (717) 777-7770</li></ul>
+              <ul><li>Linkedin: <a href="www.linkedin.com/in/haidahsaad">linkedin.com/in/haidahsaad</a></li></ul>
+              <ul><li>Github: <a href="https://github.com/heydahsaad">heydahsaad</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </page-section>
     </portfolio-very-theme>
   </div>
     
